@@ -36,14 +36,14 @@ sections = json.loads(src)['response']
 df = pd.DataFrame.from_dict(response['results'])
 
 
-path = Path("education.csv")
+path = Path("temp/education.csv")
 
 if path.is_file() == False:
-    df.to_csv("education.csv")
+    df.to_csv("temp/education.csv")
 else:
-    df_old = pd.read_csv("education.csv")
+    df_old = pd.read_csv("temp/education.csv")
     df_new = pd.concat([df_old, df])
         
     df_main_drop_duplicadas = df_new.drop_duplicates(subset = 'id', keep = 'first')
         
-    df_main_drop_duplicadas.to_csv("education.csv")
+    df_main_drop_duplicadas.to_csv("temp/education.csv")
