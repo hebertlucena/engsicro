@@ -16,9 +16,9 @@ jobs:
       with:
         fetch-depth: 0
     # Step 2: Get the latest data and store it as a CSV
-    - name: Fetch latest data
-      run: |-        
-        curl "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.csv" -o usgs_current.csv
+    #- name: Fetch latest data
+    #  run: |-        
+     #   curl "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.csv" -o usgs_current.csv
     # Step 3: Commit and push
     - name: Commit and push
       run: |-
