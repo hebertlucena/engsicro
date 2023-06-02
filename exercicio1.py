@@ -6,7 +6,7 @@ from pathlib import Path
 from datetime import datetime, timedelta
 
 TIMESTAMP_FORMAT = "%Y-%m-%dT%H:%M:%S.00Z"
-from_time = (datetime.now() + timedelta(-1)).strftime(TIMESTAMP_FORMAT)
+from_time = (datetime.now() + timedelta(-1000)).strftime(TIMESTAMP_FORMAT)
 
 args = {
     'section' : 'education',
