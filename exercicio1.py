@@ -33,24 +33,6 @@ json.loads(src)['response']['status']
 
 sections = json.loads(src)['response']
 
-education_main = pd.DataFrame.from_dict(response['results'])
+df = pd.DataFrame.from_dict(response['results'])
 
-
-df_current = pd.read_csv('education_current.csv')
-path = Path("education_main.csv")
-
-if path.is_file() == False:
-  # if false, save initial main file  
-  df_current.to_csv("education_main.csv", index = False)
-else:
-  # if the file already exists, save it to a dataframe and then append to a new one    
-  df_main_old = pd.read_csv("education_main.csv")
-  df_main_new = pd.concat([df_main_old,df_current])
-
-  # deduplicate based on unique id
-  df_main_new_drop_dupes = df_main_new.drop_duplicates(subset = "id", keep = "first")
-
-  # save to dataframe and overwrite the old usgs_main file
-  df_main_new_drop_dupes.to_csv("education_main.csv", index = False)
-
-#df.to_csv("education.csv")
+df.to_csv("education.csv")
