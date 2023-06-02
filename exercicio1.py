@@ -33,10 +33,10 @@ json.loads(src)['response']['status']
 
 sections = json.loads(src)['response']
 
-df_main = pd.DataFrame.from_dict(response['results'])
+education_main = pd.DataFrame.from_dict(response['results'])
 
 
-df_current = pd.read_csv('usgs_current.csv')
+df_current = pd.read_csv('education_current.csv')
 path = Path("education_main.csv")
 
 if path.is_file() == False:
