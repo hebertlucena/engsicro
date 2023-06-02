@@ -4,8 +4,8 @@ on:
   push:
   workflow_dispatch:
   schedule:
-      interval: "daily"
-      time: "02:00"
+    - cron:  '30 5,17 * * *'
+ 
 
 jobs:
   scrape:
