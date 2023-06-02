@@ -15,10 +15,12 @@ jobs:
       uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    # Step 2: Get the latest data and store it as a CSV
-    #- name: Fetch latest data
-    #  run: |-        
-     #   curl "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.csv" -o usgs_current.csv
+    # Instalando as bibliotecas
+    - name: Install requirements
+      run: |-
+        python -m pip install pandas
+        python -m pip install requests
+        python -m pip install json
     # Step 3: Commit and push
     - name: Commit and push
       run: |-
